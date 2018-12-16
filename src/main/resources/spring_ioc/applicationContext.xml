@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd" >
+    	<!--定义一个bean  -->   
+	<bean id="helloSpring" class="com.pegasus.springioc.domain.HelloSpring">
+		<!-- 为bean中的成员赋值 -->
+		<property name="name" value="Pegasus" />
+		<property name="address">
+			<value>shenzhen</value>
+		</property>
+		<property name="age" value="12" />
+		<property name="sex" value="1" />
+		<property name="married" value="true" />
+		<property name="clazz" value="java.lang.String" />
+	</bean>
+
+
+
+</beans>
