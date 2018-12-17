@@ -66,6 +66,12 @@
 				<bean class="com.pegasus.springioc.domain.YourBean">
 					<property name="name" value="pink" />
 				</bean>
+				<!--  表示如何装配一个null值！YourBean [name=null] -->
+				<bean class="com.pegasus.springioc.domain.YourBean">
+					<property name="name">
+						<null />
+					</property>
+				</bean>
 			</list>
 		</property>
 		
