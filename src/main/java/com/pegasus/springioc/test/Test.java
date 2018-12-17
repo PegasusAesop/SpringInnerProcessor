@@ -7,6 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import com.pegasus.springioc.domain.HelloSpring;
+import com.pegasus.springioc.domain.MyBean;
+import com.pegasus.springioc.domain.SpringBean;
 /**
  * 1两种IoC容器的创建过程
  * ApplicationContext
@@ -31,5 +33,12 @@ public class Test {
 		BeanFactory bf= new XmlBeanFactory(resource);
 		System.out.println(bf.getBean("helloSpring"));
 		((HelloSpring) bf.getBean("helloSpring")).show();
+		
+		SpringBean springBean=(SpringBean) ac.getBean("springBean");
+		springBean.show();
+		
+		MyBean myBean=(MyBean) ac.getBean("myBean");
+		System.out.println(myBean);
+		
 	}
 }

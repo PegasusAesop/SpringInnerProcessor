@@ -3,7 +3,15 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd" >
-    	<!--定义一个bean  -->   
+    	<!--定义一个bean  --> 
+    	
+    <bean id="yourBean" class="com.pegasus.springioc.domain.YourBean">
+    	<property name="name" value="rose" />
+    </bean>
+    <bean id="your1Bean" class="com.pegasus.springioc.domain.YourBean">
+    	<property name="name" value="sheep" />
+    </bean>
+    	  
 	<bean id="helloSpring" class="com.pegasus.springioc.domain.HelloSpring">
 		<!-- 为bean中的成员赋值 -->
 		<property name="name" value="Pegasus" />
@@ -15,7 +23,87 @@
 		<property name="married" value="true" />
 		<property name="clazz" value="java.lang.String" />
 	</bean>
-
-
-
+	
+	<bean id="otherBean" class="com.pegasus.springioc.domain.OtherBean" >
+		<property name="id" value="Pegasus001" />
+		<property name="name" value="Aesop" />
+		<property name="age" value="32" />
+		<property name="married" value="true" />
+		<property name="salary" value="5023.5" />
+	</bean>
+	<bean id="springBean" class="com.pegasus.springioc.domain.SpringBean" >
+		<property name="otherBean" ref="otherBean" />
+	</bean>
+	
+	<bean id="myBean" class="com.pegasus.springioc.domain.MyBean">
+		<property name="array">
+			<array>
+				<value>1</value>
+				<value>2</value>
+				<value>4</value>
+				<value>6</value>
+			</array>
+		</property>
+		
+		<property name="list">
+			<list>
+				<value>Richard</value>
+				<value>Aesop</value>
+				<value>Pegasus</value>
+				<value>Photon</value>
+			</list>
+		</property>
+		<!-- 集合中装入对象 -->
+		<property name="lists">
+			<list>
+				<ref bean="yourBean" />
+				<bean class="com.pegasus.springioc.domain.YourBean">
+					<property name="name" value="orange" />
+				</bean>
+				<bean class="com.pegasus.springioc.domain.YourBean">
+					<property name="name" value="red" />
+				</bean>
+				<bean class="com.pegasus.springioc.domain.YourBean">
+					<property name="name" value="pink" />
+				</bean>
+			</list>
+		</property>
+		
+		<property name="set">
+			<set>
+				<value>2.5</value>
+				<value>4.3</value>
+				<value>2.58</value>
+				<value>2.51</value>
+			</set>
+		</property>
+		
+		<property name="map">
+			<map>
+				<entry key="first" value="1"></entry>
+				<entry key="second" value="2"></entry>
+				<entry key="third" value="3"></entry>
+				<entry key="forth" value="4"></entry>
+			</map>
+		</property>
+		
+		<property name="maps">
+			<map>
+				<entry key-ref="yourBean" value="1"></entry>
+				<entry key-ref="your1Bean" value="2"></entry>
+			</map>
+		</property>
+		
+		<property name="properties">
+			<props>
+				<prop key="hello">1</prop>
+				<prop key="saybye">2</prop>
+				<prop key="go!">3</prop>
+				<prop key="sing">10</prop>
+				<prop key="haha">11</prop>
+			</props>
+		</property>
+		
+	</bean>
+	
 </beans>
