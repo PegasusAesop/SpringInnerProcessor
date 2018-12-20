@@ -3,12 +3,45 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd" >
-    	<!--定义一个bean  --> 
-    	
-	<bean id="springBean" class="com.pegasus.springioc.domain.SpringBean" init-method="init" >
-		<property name="username" value="${username}" />
-		<property name="password" value="${password}" />
-		<property name="email" value="${email}" />
+     
+     <!-- t自定属性编译器 -->
+    <!--  <bean class="com.pegasus.springioc.domain.SpringBeanFactoryPostProcessor">
+     
+     	<property name="customEditors">
+     		<map>
+     			<entry key="com.pegasus.springioc.domain.Address" value="com.pegasus.springioc.domain.AddressPropertyEditor" />
+     			<entry key="java.util.Date" value="com.pegasus.springioc.domain.DatePropertyEditor" />
+     			<entry key="java.lang.String" value="com.pegasus.springioc.domain.StringPropertyEditor" />
+     		
+     		</map>
+     	</property>
+     </bean> -->
+       
+	<!-- <bean id="address" class="com.pegasus.springioc.domain.Address" >
+		<property name="city" value="Shenzhen" />
+		<property name="province" value="GuangDong" />
+	</bean> -->
+	
+	<!-- spring自已提供的属性编译器 -->
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		
+		<property name="customEditors">
+     		<map>
+     			<entry key="com.pegasus.springioc.domain.Address" value="com.pegasus.springioc.domain.AddressPropertyEditor" />
+     			<entry key="java.util.Date" value="com.pegasus.springioc.domain.DatePropertyEditor" />
+     			<entry key="java.lang.String" value="com.pegasus.springioc.domain.StringPropertyEditor" />
+     		
+     		</map>
+     	</property>
+	
 	</bean>
 	
+	
+	
+	<bean id="springBean" class="com.pegasus.springioc.domain.SpringBean" >
+		<property name="username" value="${username}" />
+		<property name="address" value="[乌鲁木齐-新疆]" />
+		<property name="birthday" value="2018-01-01" />
+	
+	</bean>
 </beans>
