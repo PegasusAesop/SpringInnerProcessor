@@ -2,6 +2,7 @@ package com.pegasus.springioc.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.Resource;
 
 import com.pegasus.springioc.domain.SpringBean;
 
@@ -13,7 +14,9 @@ public class Test {
 		ApplicationContext ac=new ClassPathXmlApplicationContext("./spring_ioc/applicationContext.xml");
 		SpringBean springBean=(SpringBean) ac.getBean("springBean");
 		System.out.println(springBean);
-	
+		
+		Resource resource = springBean.getResource();
+		System.out.println(resource.getFilename());
 		
 	}
 }

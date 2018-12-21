@@ -10,8 +10,6 @@ public class AddressPropertyEditor extends PropertyEditorSupport{
 	@Override
 	public String getAsText() {
 		Address address=(Address) getValue();
-		
-		
 		return "["+address.getCity()+"_"+address.getProvince()+"]";
 	}
 

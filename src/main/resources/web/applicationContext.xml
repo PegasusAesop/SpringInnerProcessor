@@ -31,18 +31,11 @@
 		</property>
 	</bean>
 	
-	<bean id="springBean" class="com.pegasus.springioc.domain.SpringBean" >
-		<property name="username" value="${username}" />
-		<property name="address" value="[乌鲁木齐-新疆]" />
-		<property name="birthday" value="2018-01-01" />
-		<property name="sex"  value="${sex}" />
-		<property name="age"  value="${age}" />
-		<property name="salary" value="${salary}" />
+	<bean id="myBean" class="com.pegasus.springioc.domain.MyBean" >
+		<!-- <property name="code" value="${code}" />
+		<property name="name" value="${name}" />
 		<property name="cretime" value="${cretime}" />
-		<property name="clazz" value="${clazz}" />
-		<property name="resource" value="${resource}" />
-		<property name="id" value="${id}" />
-		<property name="married" value="${married}" />
+		<property name="address" value="${address}" /> -->
 		
 	</bean>
 </beans>

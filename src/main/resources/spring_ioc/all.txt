@@ -1,0 +1,13 @@
+username=Aesop
+pwd=321
+email=Aesop@sina.com.cn
+phone=13388888888
+address=Shenzhen
+sex=true
+age=28
+salary=1400.00
+cretime=2018-12-12
+clazz=java.lang.String
+resource=address.properties
+id=10000
+married=true

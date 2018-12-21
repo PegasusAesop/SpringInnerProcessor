@@ -34,7 +34,11 @@ public class PropertiesUtil {
 	 */
 	public static String get(String key) {
 		
-		return prop.containsKey(key) ? prop.get(key).toString():"";
+		if(!prop.containsKey(key)) {
+			
+			throw new RuntimeException("key值:"+key+" 没有对应的value值！ ");
+		}
+		return prop.get(key).toString();
 		
 	}
 	
